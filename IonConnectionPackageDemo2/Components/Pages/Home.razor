@@ -1,0 +1,45 @@
+﻿@page "/"
+@using InforIonClientLibrary.Models
+@using InforIonClientLibrary
+@inject ITokenService TokenService
+
+<div class="container my-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title mb-0">Fetch Token</h3>
+        </div>
+        <div class="card-body">
+            @if (tokenResponse == null)
+            {
+                <p><em>Loading...</em></p>
+            }
+            else
+            {
+                <div>
+                    <p><strong>Access Token:</strong> @tokenResponse.AccessToken</p>
+                    <p><strong>Expires In:</strong> @tokenResponse.ExpiresIn seconds</p>
+                    <p><strong>Expires At:</strong> @tokenResponse.ExpiresAt.ToLocalTime()</p>
+                    <p><strong>Refresh Token:</strong> @tokenResponse.RefreshToken</p>
+                    <p><strong>Token Type:</strong> @tokenResponse.TokenType</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private TokenResponse? tokenResponse;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            tokenResponse = await TokenService.GetTokenAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching token: {ex.Message}");
+        }
+    }
+}
+

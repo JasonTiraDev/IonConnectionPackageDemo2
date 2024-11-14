@@ -1,0 +1,62 @@
+# Ignore all .ionapi files
+*.ionapi
+
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore Visual Studio Code workspace settings file
+.vscode/settings.json
+
+# Ignore Visual Studio Code extensions file
+.vscode/extensions.json
+
+# Ignore Visual Studio Code launch configuration file
+.vscode/launch.json
+
+# Ignore Visual Studio Code tasks configuration file
+.vscode/tasks.json
+
+# Ignore Visual Studio Code debug history
+.vscode/.history/
+
+# Ignore other common files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.DS_Store
+
+# Ignore Visual Studio specific files
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj.*
+*.csproj.user
+*.csproj.*
+*.dbmdl
+*.jfm
+*.pdb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.log
+*.userprefs
+*.userosscache
+*.sln.docstates
